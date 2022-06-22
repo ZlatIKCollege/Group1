@@ -14,7 +14,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="user" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="user" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="user_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
@@ -25,7 +25,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="role" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="role" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="role_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
@@ -36,7 +36,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="clients" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="clients" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="clients_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
@@ -47,7 +47,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="suppliiers" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="suppliiers" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="suppliiers_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
@@ -58,7 +58,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="product" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="product" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="product_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
@@ -69,7 +69,7 @@
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
                 </StackPanel>
 
-                <DataGrid x:Name="sale" DockPanel.Dock="Bottom" Margin="8 0 8 8"></DataGrid>
+                <DataGrid x:Name="sale" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="sale_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
         

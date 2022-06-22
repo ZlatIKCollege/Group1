@@ -1631,11 +1631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DNS\\source\\repos\\Xiaomi\\Xiaomi\\Xiaomi.csproj",
+      "projectUniqueName": "C:\\Users\\DNS\\Source\\Repos\\Group1\\Xiaomi\\Xiaomi.csproj",
       "projectName": "Xiaomi",
-      "projectPath": "C:\\Users\\DNS\\source\\repos\\Xiaomi\\Xiaomi\\Xiaomi.csproj",
+      "projectPath": "C:\\Users\\DNS\\Source\\Repos\\Group1\\Xiaomi\\Xiaomi.csproj",
       "packagesPath": "C:\\Users\\DNS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DNS\\source\\repos\\Xiaomi\\Xiaomi\\obj\\",
+      "outputPath": "C:\\Users\\DNS\\Source\\Repos\\Group1\\Xiaomi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -88,10 +88,159 @@ namespace Xiaomi
 
             switch (headerName)
             {
-                case "role":
+                case "Role":
                     e.Column.Header = "Должность";
+                break;
+
+                case "Surname":
+                    e.Column.Header = "Фамилия";
+                break;
+
+                case "Name":
+                    e.Column.Header = "Имя";
+                break;
+
+                case "Patronymic":
+                    e.Column.Header = "Отчество";
+                break;
+
+                case "Login":
+                    e.Column.Header = "Логин";
+                break;
+
+                case "Password":
+                    e.Column.Header = "Пароль";
+                break;
+
+                case "Passport":
+                    e.Column.Header = "Паспортные данные";
+                break;
+
+                case "Contact":
+                    e.Column.Header = "Контактные данные";
+                break;
+
+                case "Birthday":
+                    e.Column.Header = "День рождения";
+                break;
+
+                case "Address":
+                    e.Column.Header = "Адрес";
+                break;
+            }
+        }
+
+        private void role_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+
+            switch (headerName)
+            {
+                case "NameRole":
+                    e.Column.Header = "Наименование должности";
+                break;
+            }
+        }
+
+        private void clients_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+
+            switch(headerName)
+            {
+                case "NameComp":
+                    e.Column.Header = "Компания";
+                break;
+
+                case "Contact":
+                    e.Column.Header = "Контакты";
+                break;
+
+                case "Adress":
+                    e.Column.Header = "Адрес";
+                break;
+            }
+        }
+
+        private void suppliiers_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+
+            switch(headerName)
+            {
+                case "Name":
+                    e.Column.Header = "Наименования поставщика";
+                break;
+
+                case "Contact":
+                    e.Column.Header = "Контакты";
+                break;
+
+                case "Adress":
+                    e.Column.Header = "Адрес";
+                break;
+            }
+        }
+
+        private void product_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+
+            switch (headerName)
+            {
+                case "Date":
+                    e.Column.Header = "Дата";
+                break;
+
+                case "Surname":
+                    e.Column.Header = "Фамилия";
+                break;
+
+                case "Name":
+                    e.Column.Header = "Имя";
+                break;
+
+                case "Product1":
+                    e.Column.Header = "Товар";
+                break;
+
+                case "KolVo":
+                    e.Column.Header = "Количество";
+                break;
+
+                case "Summa":
+                    e.Column.Header = "Сумма";
+                break;
+            }
+        }
+
+        private void sale_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+
+            switch(headerName)
+            {
+                case "Date":
+                    e.Column.Header = "Дата";
+                    break;
+
+                case "Client":
+                    e.Column.Header = "Компания";
+                    break;
+
+                case "Product":
+                    e.Column.Header = "Наименование товара";
+                    break;
+
+                case "KolVo":
+                    e.Column.Header = "Количество";
+                    break;
+
+                case "Summa":
+                    e.Column.Header = "Сумма";
                     break;
             }
         }
     }
+    
 }

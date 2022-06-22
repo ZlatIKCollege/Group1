@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NyV03WXs1+LZO45OIX6bWIfcBgOlJYSr7kyRRyZRd6axS8cHpyN/WKvyXWUhtNIRrMdSe1KrX8Sdmrzk8weFxw==",
+  "dgSpecHash": "ExovtlxAEQZBN+K0SwyHWUz0+8Q4lrXEQVnGjERcvp4IkHgLoNZ51D5Ye+IkKfc4Ojkc/PV2xEuzTYNhvLTWRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DNS\\source\\repos\\Xiaomi\\Xiaomi\\Xiaomi.csproj",
+  "projectFilePath": "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\Xiaomi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DNS\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\DNS\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
