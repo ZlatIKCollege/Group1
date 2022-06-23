@@ -73,12 +73,6 @@ namespace Xiaomi
                     .HasColumnName("kol_vo")
                     .HasDefaultValueSql("'0'");
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("name")
-                    .HasDefaultValueSql("'0'");
-
                 entity.Property(e => e.Product1)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -89,12 +83,6 @@ namespace Xiaomi
                     .IsRequired()
                     .HasMaxLength(50)
                     .HasColumnName("summa")
-                    .HasDefaultValueSql("'0'");
-
-                entity.Property(e => e.Surname)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("surname")
                     .HasDefaultValueSql("'0'");
             });
 

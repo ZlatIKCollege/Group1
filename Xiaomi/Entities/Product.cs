@@ -9,8 +9,6 @@ namespace Xiaomi
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
         public string Product1 { get; set; }
         public string KolVo { get; set; }
         public string Summa { get; set; }

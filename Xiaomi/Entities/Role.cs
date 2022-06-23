@@ -8,6 +8,6 @@ namespace Xiaomi
     public partial class Role
     {
         public int Id { get; set; }
-        public int? NameRole { get; set; }
+        public string NameRole { get; set; }
     }
 }

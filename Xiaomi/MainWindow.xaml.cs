@@ -31,6 +31,8 @@ namespace Xiaomi
         private string _saleTable;
         public MainWindow()
         {
+            new Auth().ShowDialog();
+
             InitializeComponent();
             _userTable = "Пользователи";
             _roleTable = "Роли";
@@ -89,7 +91,19 @@ namespace Xiaomi
             switch (headerName)
             {
                 case "Role":
-                    e.Column.Header = "Должность";
+                    e.Column.Visibility= Visibility.Collapsed;
+                    _dbContext.Roles.Load();
+                    Binding binding = new Binding();
+                    binding.Path = new PropertyPath("RoleId");
+                    DataGridComboBoxColumn col = new DataGridComboBoxColumn
+                    {
+                        Header = "Должность",
+                        DisplayMemberPath = "NameRole",
+                        SelectedValuePath = "ID",
+                        ItemsSource = _dbContext.Roles.ToArray(),
+                        SelectedValueBinding = binding
+                    };
+                    ((DataGrid)sender).Columns.Add(col);
                 break;
 
                 case "Surname":
@@ -238,6 +252,20 @@ namespace Xiaomi
 
                 case "Summa":
                     e.Column.Header = "Сумма";
+                    break;
+            }
+        }
+
+        private void Save_button(object sender, RoutedEventArgs e)
+        {
+            _dbContext.SaveChanges();
+        }
+
+        private void Delete_button(object sender, RoutedEventArgs e)
+        {
+            switch (_userTable) {
+                case "Пользователи":
+                    _dbContext.Users.Local.Remove(user.SelectedItem as User);
                     break;
             }
         }

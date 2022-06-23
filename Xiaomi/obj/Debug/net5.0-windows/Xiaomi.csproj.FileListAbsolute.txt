@@ -92,3 +92,5 @@ C:\Users\DNS\Source\Repos\Group1\Xiaomi\obj\Debug\net5.0-windows\refint\Xiaomi.d
 C:\Users\DNS\Source\Repos\Group1\Xiaomi\obj\Debug\net5.0-windows\Xiaomi.pdb
 C:\Users\DNS\Source\Repos\Group1\Xiaomi\obj\Debug\net5.0-windows\Xiaomi.genruntimeconfig.cache
 C:\Users\DNS\Source\Repos\Group1\Xiaomi\obj\Debug\net5.0-windows\ref\Xiaomi.dll
+C:\Users\DNS\source\repos\Group1\Xiaomi\obj\Debug\net5.0-windows\Auth.g.cs
+C:\Users\DNS\source\repos\Group1\Xiaomi\obj\Debug\net5.0-windows\Auth.baml
