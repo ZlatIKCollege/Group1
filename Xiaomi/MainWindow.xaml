@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xiaomi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
     <TabControl>
-        <TabItem Header="Пользователи">
-            <DockPanel>
+        <TabItem x:Name="userTab" Header="Пользователи" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="user" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="user_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 
-        <TabItem Header="Роли">
-            <DockPanel>
+        <TabItem Name="roleTab"  Header="Роли" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
@@ -29,8 +30,8 @@
             </DockPanel>
         </TabItem>
 
-        <TabItem Header="Клиенты">
-            <DockPanel>
+        <TabItem Name="clientTab" Header="Клиенты" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
@@ -40,8 +41,8 @@
             </DockPanel>
         </TabItem>
 
-        <TabItem Header="Поставщики">
-            <DockPanel>
+        <TabItem Name="supTab" Header="Поставщики" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
@@ -51,8 +52,8 @@
             </DockPanel>
         </TabItem>
 
-        <TabItem Header="Созданный товар">
-            <DockPanel>
+        <TabItem Name="productTab" Header="Созданный товар" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
@@ -62,8 +63,8 @@
             </DockPanel>
         </TabItem>
 
-        <TabItem Header="Продажи">
-            <DockPanel>
+        <TabItem Name="saleTab" Header="Продажи" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>

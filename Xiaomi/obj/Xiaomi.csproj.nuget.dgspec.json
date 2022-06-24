@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\Xiaomi.csproj": {}
+    "C:\\Users\\DNS\\Source\\Repos\\ZlatIKCollege\\Group1\\Xiaomi\\Xiaomi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\Xiaomi.csproj": {
+    "C:\\Users\\DNS\\Source\\Repos\\ZlatIKCollege\\Group1\\Xiaomi\\Xiaomi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\Xiaomi.csproj",
+        "projectUniqueName": "C:\\Users\\DNS\\Source\\Repos\\ZlatIKCollege\\Group1\\Xiaomi\\Xiaomi.csproj",
         "projectName": "Xiaomi",
-        "projectPath": "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\Xiaomi.csproj",
+        "projectPath": "C:\\Users\\DNS\\Source\\Repos\\ZlatIKCollege\\Group1\\Xiaomi\\Xiaomi.csproj",
         "packagesPath": "C:\\Users\\DNS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DNS\\source\\repos\\Group1\\Xiaomi\\obj\\",
+        "outputPath": "C:\\Users\\DNS\\Source\\Repos\\ZlatIKCollege\\Group1\\Xiaomi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,6 +53,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.13, )"
+            },
+            "System.ObjectModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

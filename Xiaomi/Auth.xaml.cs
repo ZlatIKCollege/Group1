@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xiaomi.Entities;
 
 namespace Xiaomi
 {
@@ -21,6 +22,7 @@ namespace Xiaomi
     {
         private group_1_is_31Context _dbContext = new group_1_is_31Context();
         private bool _isLogin = false;
+        public static User CurrentUser;
         public Auth()
         {
             InitializeComponent();
@@ -33,8 +35,9 @@ namespace Xiaomi
                 User user = _dbContext.Users.Where(
                     (usr) => usr.Login == LoginTextBox.Text && usr.Password == PasswordTextBox.Text
                     ).Single();
-                MessageBox.Show($"Привет!!!!!!,{user.Login}","УДАЧНО");
+                MessageBox.Show($"Привет! СОЛНЫШКо хорошего тебе дня ");
                 _isLogin = true;
+                CurrentUser = user;
                 Close();
             }
             catch

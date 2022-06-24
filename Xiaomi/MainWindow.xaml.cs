@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xiaomi.Entities;
 
 
 namespace Xiaomi
@@ -23,29 +27,17 @@ namespace Xiaomi
     public partial class MainWindow : Window
     {
         private group_1_is_31Context _dbContext = new group_1_is_31Context();
-        private string _userTable;
-        private string _roleTable;
-        private string _clientsTable;
-        private string _suppliersTable;
-        private string _productTable;
-        private string _saleTable;
+        private string _currentTable;
+
         public MainWindow()
         {
             new Auth().ShowDialog();
 
             InitializeComponent();
-            _userTable = "Пользователи";
-            _roleTable = "Роли";
-            _clientsTable = "Клиенты";
-            _suppliersTable = "Поставщики";
-            _productTable = "Созданный товар";
-            _saleTable = "Продажи";
-            RefreshTable(_userTable);
-            RefreshTable(_roleTable);
-            RefreshTable(_clientsTable);
-            RefreshTable(_suppliersTable);
-            RefreshTable(_productTable);
-            RefreshTable(_saleTable);
+            CheckUser();
+
+            _currentTable = "Пользователи";
+            RefreshTable(_currentTable);
         }
 
         private void RefreshTable(string tableName)
@@ -53,7 +45,7 @@ namespace Xiaomi
             switch (tableName)
             {
                 case "Пользователи": 
-                _dbContext.Users.Load();
+                    _dbContext.Users.Load();
                     user.ItemsSource = _dbContext.Users.Local.ToObservableCollection();
                 break;
 
@@ -90,8 +82,13 @@ namespace Xiaomi
 
             switch (headerName)
             {
-                case "Role":
+                case "RoleId":
                     e.Column.Visibility= Visibility.Collapsed;
+                break;
+
+                case "Role":
+                    e.Column.Visibility = Visibility.Collapsed;
+
                     _dbContext.Roles.Load();
                     Binding binding = new Binding();
                     binding.Path = new PropertyPath("RoleId");
@@ -99,12 +96,12 @@ namespace Xiaomi
                     {
                         Header = "Должность",
                         DisplayMemberPath = "NameRole",
-                        SelectedValuePath = "ID",
+                        SelectedValuePath = "Id",
                         ItemsSource = _dbContext.Roles.ToArray(),
                         SelectedValueBinding = binding
                     };
                     ((DataGrid)sender).Columns.Add(col);
-                break;
+                    break;
 
                 case "Surname":
                     e.Column.Header = "Фамилия";
@@ -263,11 +260,85 @@ namespace Xiaomi
 
         private void Delete_button(object sender, RoutedEventArgs e)
         {
-            switch (_userTable) {
+            switch (_currentTable) {
                 case "Пользователи":
                     _dbContext.Users.Local.Remove(user.SelectedItem as User);
                     break;
             }
+        }
+
+        private void Tab_GotFocus(object sender, RoutedEventArgs e)
+        {
+            _currentTable = ((TabItem)sender).Header.ToString();
+            RefreshTable(_currentTable);
+        }
+
+
+
+        private void CheckUser()
+        {
+            switch (Auth.CurrentUser.RoleId)
+            {
+                case 1://Бухгалтер
+                    roleTab.Visibility = Visibility.Collapsed;
+                    break;
+                case 2://Менеджер
+                    userTab.Visibility = Visibility.Collapsed;
+                    roleTab.Visibility = Visibility.Collapsed;
+                    break;
+                case 3://Управляющий
+                    break;
+                case 4://дистрибьютор
+                    userTab.Visibility = Visibility.Collapsed;
+                    roleTab.Visibility = Visibility.Collapsed;
+                    break;
+                case 5://Производитель
+                    userTab.Visibility = Visibility.Collapsed;
+                    roleTab.Visibility = Visibility.Collapsed;
+                    saleTab.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
+
+        private string GetUserFile()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "CSV файлы | *.csv";
+            ofd.Title = "Выберите файл для экспорта";
+
+            if (ofd.ShowDialog() == true)
+            {
+                return ofd.FileName;
+            }
+
+            return null;
+        }
+
+        private void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            string filepath = GetUserFile();
+
+            if (filepath == null)
+                return;
+            StreamWriter file = new StreamWriter(filepath, false);
+
+            switch (_currentTable)
+            {
+                case "Пользователи":
+                    ObservableCollection<User> table = _dbContext.Users.Local.ToObservableCollection();
+
+
+                    file.WriteLine($"ID;Логин;Пароль;РольИД");
+
+                    foreach (User elem in table)
+                    {
+                        file.WriteLine($"{elem.Id};{elem.Login};{elem.Password};{elem.RoleId}");
+                    }
+
+                    break;
+            }
+            file.Close();
+            MessageBox.Show("Экспорт успешно завершен", "Успешно");
         }
     }
     

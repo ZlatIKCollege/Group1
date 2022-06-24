@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xiaomi"
         mc:Ignorable="d"
-        Title="Auth" Height="170" Width="800"
+        Title="Auth" Height="200" Width="300" Background="Pink"
         Closed="Window_closed">
     <StackPanel Margin="12">
         <TextBlock Text="Логин" Margin="0 0 0 4"/>
@@ -14,6 +14,6 @@
         <TextBlock Text="Пароль" Margin="0 0 0 4"/>
         <TextBox Name="PasswordTextBox"/>
 
-        <Button Content="Войти" Margin="0 16 0 0" Click="Login_click"/>
+        <Button Content="Войти" Width="200" Margin="0 16 0 0" Click="Login_click"/>
     </StackPanel>
 </Window>

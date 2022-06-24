@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Xiaomi
+namespace Xiaomi.Entities
 {
     public partial class User
     {
         public int Id { get; set; }
-        public int Role { get; set; }
+        public int RoleId { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
@@ -18,5 +18,7 @@ namespace Xiaomi
         public string Contact { get; set; }
         public DateTime Birthday { get; set; }
         public string Address { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }

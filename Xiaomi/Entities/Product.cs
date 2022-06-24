@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Xiaomi
+namespace Xiaomi.Entities
 {
     public partial class Product
     {

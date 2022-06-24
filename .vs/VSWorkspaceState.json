@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Xiaomi"
   ],
-  "SelectedNode": "\\Xiaomi.sln",
+  "SelectedNode": "\\Xiaomi\\Auth.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

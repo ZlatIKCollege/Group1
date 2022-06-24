@@ -2,10 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-
 #nullable disable
 
-namespace Xiaomi
+namespace Xiaomi.Entities
 {
     public partial class group_1_is_31Context : DbContext
     {
@@ -38,8 +37,6 @@ namespace Xiaomi
         {
             modelBuilder.Entity<Client>(entity =>
             {
-                entity.ToTable("client");
-
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Adress)
@@ -88,11 +85,12 @@ namespace Xiaomi
 
             modelBuilder.Entity<Role>(entity =>
             {
-                entity.ToTable("role");
-
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.NameRole).HasColumnName("name_role");
+                entity.Property(e => e.NameRole)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("name_role");
             });
 
             modelBuilder.Entity<Sale>(entity =>
@@ -149,8 +147,7 @@ namespace Xiaomi
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.Login, "login")
-                    .IsUnique();
+                entity.HasIndex(e => e.RoleId, "FK_Roles");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
@@ -201,11 +198,21 @@ namespace Xiaomi
                     .HasColumnName("patronymic")
                     .HasComment("Отчество");
 
+                entity.Property(e => e.RoleId)
+                    .HasColumnName("roleID")
+                    .HasComment("Должность");
+
                 entity.Property(e => e.Surname)
                     .IsRequired()
                     .HasMaxLength(25)
                     .HasColumnName("surname")
                     .HasComment("Фамилия");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Roles");
             });
 
             OnModelCreatingPartial(modelBuilder);
