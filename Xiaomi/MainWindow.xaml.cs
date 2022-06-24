@@ -264,6 +264,21 @@ namespace Xiaomi
                 case "Пользователи":
                     _dbContext.Users.Local.Remove(user.SelectedItem as User);
                     break;
+                case "Роли":
+                    _dbContext.Roles.Local.Remove(role.SelectedItem as Role);
+                    break;
+                case "Клиенты":
+                    _dbContext.Clients.Local.Remove(clients.SelectedItem as Client);
+                    break;
+                case "Поставщики":
+                    _dbContext.Suppliers.Local.Remove(suppliiers.SelectedItem as Supplier);
+                    break;
+                case "Созданный товар":
+                    _dbContext.Products.Local.Remove(product.SelectedItem as Product);
+                    break;
+                case "Продажи":
+                    _dbContext.Sales.Local.Remove(sale.SelectedItem as Sale);
+                    break;
             }
         }
 

@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\DNS\Source\Repos\ZlatIKCollege\Group1\Xiaomi\obj\Debug\net5.0-windows\
-Xiaomi_1t0zl2eq_wpftmp
+Xiaomi
 none
 false
-TRACE;RELEASE;NET;NET5_0;NETCOREAPP
+TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\DNS\Source\Repos\ZlatIKCollege\Group1\Xiaomi\App.xaml
 2629792908
 
-14-126486649
-4281877947314
+111705572320
+214-1208509991
 Auth.xaml;MainWindow.xaml;
 
-True
+False
 

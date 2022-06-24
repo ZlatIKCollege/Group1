@@ -22,8 +22,8 @@
         <TabItem Name="roleTab"  Header="Роли" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
+                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
                 </StackPanel>
 
                 <DataGrid x:Name="role" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="role_AutoGeneratingColumn"></DataGrid>
@@ -33,8 +33,8 @@
         <TabItem Name="clientTab" Header="Клиенты" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
+                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
                 </StackPanel>
 
                 <DataGrid x:Name="clients" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="clients_AutoGeneratingColumn"></DataGrid>
@@ -44,8 +44,8 @@
         <TabItem Name="supTab" Header="Поставщики" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
+                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
                 </StackPanel>
 
                 <DataGrid x:Name="suppliiers" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="suppliiers_AutoGeneratingColumn"></DataGrid>
@@ -55,8 +55,8 @@
         <TabItem Name="productTab" Header="Созданный товар" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
+                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
                 </StackPanel>
 
                 <DataGrid x:Name="product" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="product_AutoGeneratingColumn"></DataGrid>
@@ -66,13 +66,24 @@
         <TabItem Name="saleTab" Header="Продажи" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
+                    <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
                 </StackPanel>
 
                 <DataGrid x:Name="sale" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="sale_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
-        
+
+        <TabItem Name="reportstab" Header="Отчеты" GotFocus="Tab_GotFocus">
+            <DockPanel Background="Pink">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
+                    <Button Content="Отчет по продажам" Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Отчет по созданным товарам"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                </StackPanel>
+
+                <DataGrid x:Name="report" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="sale_AutoGeneratingColumn"></DataGrid>
+            </DockPanel>
+        </TabItem>
+
     </TabControl>
 </Window>
