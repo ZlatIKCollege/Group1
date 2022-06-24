@@ -24,6 +24,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="role" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="role_AutoGeneratingColumn"></DataGrid>
@@ -35,6 +36,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="clients" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="clients_AutoGeneratingColumn"></DataGrid>
@@ -46,6 +48,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="suppliiers" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="suppliiers_AutoGeneratingColumn"></DataGrid>
@@ -57,6 +60,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="product" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="product_AutoGeneratingColumn"></DataGrid>
@@ -68,6 +72,7 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
                     <Button Content="Сохранить" Margin="0 0 8 0" Padding="8 2 8 2" Click="Save_button"/>
                     <Button Content="Удалить"  Margin="0 0 8 0" Padding="8 2 8 2" Click="Delete_button"/>
+                    <Button Content="Экспорт"  Margin="0 0 8 0" Padding="8 2 8 2" Click="ExportButton_Click"/>
                 </StackPanel>
 
                 <DataGrid x:Name="sale" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="sale_AutoGeneratingColumn"></DataGrid>
