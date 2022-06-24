@@ -82,11 +82,10 @@
         <TabItem Name="reportstab" Header="Отчеты" GotFocus="Tab_GotFocus">
             <DockPanel Background="Pink">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
-                    <Button Content="Отчет по продажам" Margin="0 0 8 0" Padding="8 2 8 2"/>
-                    <Button Content="Отчет по созданным товарам"  Margin="0 0 8 0" Padding="8 2 8 2"/>
+                    <Button Content="Отчет по продажам" Margin="0 0 8 0" Padding="8 2 8 2" Click="ReportSale_Click"/>
                 </StackPanel>
 
-                <DataGrid x:Name="report" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="sale_AutoGeneratingColumn"></DataGrid>
+                <DataGrid x:Name="report" DockPanel.Dock="Bottom" Margin="8 0 8 8" AutoGeneratingColumn="report_AutoGeneratingColumn"></DataGrid>
             </DockPanel>
         </TabItem>
 

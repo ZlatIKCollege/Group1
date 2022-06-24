@@ -306,6 +306,7 @@ namespace Xiaomi
                 case 4://дистрибьютор
                     userTab.Visibility = Visibility.Collapsed;
                     roleTab.Visibility = Visibility.Collapsed;
+                    product.Visibility = Visibility.Collapsed;
                     break;
                 case 5://Производитель
                     userTab.Visibility = Visibility.Collapsed;
@@ -354,6 +355,83 @@ namespace Xiaomi
             }
             file.Close();
             MessageBox.Show("Экспорт успешно завершен", "Успешно");
+        }
+
+        private void report_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+            e.Column.IsReadOnly = true;
+
+            switch (headerName)
+            {
+                case "User":
+                    e.Column.Visibility = Visibility.Collapsed;
+                    break;
+                case "Product":
+                    e.Column.Visibility = Visibility.Collapsed;
+                    break;
+                case "Date":
+                    e.Column.Header = "Дата";
+                    break;
+                case "UserNavigation":
+                    e.Column.Visibility = Visibility.Collapsed;
+
+                    _dbContext.Users.Load();
+
+                    Binding binding = new Binding();
+                    binding.Path = new PropertyPath("User");
+
+                    DataGridComboBoxColumn col = new DataGridComboBoxColumn
+                    {
+                        Header = "Пользователь",
+                        DisplayMemberPath = "Login",
+                        SelectedValuePath = "Id",
+                        ItemsSource = _dbContext.Users.ToArray(),
+                        SelectedValueBinding = binding,
+                        IsReadOnly = true
+                    };
+                    ((DataGrid)sender).Columns.Add(col);
+                    break;
+                case "ProductNavigation":
+                    e.Column.Visibility = Visibility.Collapsed;
+                    _dbContext.Products.Load();
+
+                    Binding binding1 = new Binding();
+                    binding1.Path = new PropertyPath("Product");
+
+                    DataGridComboBoxColumn col1 = new DataGridComboBoxColumn
+                    {
+                        Header = "Товар",
+                        DisplayMemberPath = "Name",
+                        SelectedValuePath = "Id",
+                        ItemsSource = _dbContext.Products.ToArray(),
+                        SelectedValueBinding = binding1,
+                        IsReadOnly = true
+                    };
+                    ((DataGrid)sender).Columns.Add(col1);
+                    break;
+            }
+
+        }
+
+        private void ReportSale_Click(object sender, RoutedEventArgs e)
+        {
+            string reportName = ((Button)sender).Content.ToString();
+
+            switch (reportName)
+            {
+                case "Отчет по продажам":
+                    ObservableCollection<Sale> salesCurMonth = new ObservableCollection<Sale>();
+
+                    _dbContext.Sales.Load();
+                    foreach (Sale sale in _dbContext.Sales.Local.ToObservableCollection())
+                    {
+                        if (sale.Date.Month == DateTime.Now.Month)
+                            salesCurMonth.Add(sale); 
+                    }
+                    report.ItemsSource = salesCurMonth;
+                    break;
+            }
         }
     }
     
