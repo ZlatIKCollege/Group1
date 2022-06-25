@@ -373,6 +373,15 @@ namespace Xiaomi
                 case "Date":
                     e.Column.Header = "Дата";
                     break;
+                case "Client":
+                    e.Column.Header = "Клиент";
+                    break;
+                case "KolVo":
+                    e.Column.Header = "Количество";
+                    break;
+                case "Summa":
+                    e.Column.Header = "Сумма";
+                    break;
                 case "UserNavigation":
                     e.Column.Visibility = Visibility.Collapsed;
 
